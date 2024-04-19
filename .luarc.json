@@ -1,7 +1,3 @@
 {
-    "diagnostics.globals": [
-        "opts",
-        "vim",
-        "cmp"
-    ]
+  "diagnostics.globals": ["opts", "vim", "cmp"]
 }
