@@ -22,4 +22,3 @@ opt.splitright = true
 
 -- buffer-local settings
 opt.swapfile = false
-
