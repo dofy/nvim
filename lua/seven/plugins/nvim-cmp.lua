@@ -20,8 +20,6 @@ return {
     config = function()
       local cmp = require("cmp")
 
-      local
-
       local luasnip = require("luasnip")
 
       local lspkind = require("lspkind")
