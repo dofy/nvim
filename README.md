@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-git clone git@github.com:dofy/init.lua.git ~/.config/nvim
+git clone git@github.com:dofy/nvim.git ~/.config/nvim
 ```
 
 ## Useage
