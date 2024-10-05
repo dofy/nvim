@@ -1,2 +1,2 @@
-require("seven.core")
-require("seven.lazy")
+require("custom.core")
+require("custom.lazy")

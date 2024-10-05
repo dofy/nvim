@@ -14,3 +14,7 @@ In neovim:
 - run `:Mason` to install or update LSP servers.
 - in Normal mode, press `space bar` to trigger the leader key
   - wait a moment to see the available keybindings
+
+## Screenshot
+
+![image](./assets/leader.jpg)
