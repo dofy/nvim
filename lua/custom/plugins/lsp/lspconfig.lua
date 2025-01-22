@@ -131,6 +131,24 @@ return {
           },
         })
       end,
+      ["denols"] = function()
+        -- configure deno language server
+        lspconfig["denols"].setup({
+          capabilities = capabilities,
+          root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+        })
+      end,
+      ["ts_ls"] = function()
+        lspconfig["ts_ls"].setup({
+          capabilities = capabilities,
+          root_dir = function(fname)
+            local util = lspconfig.util
+            return not util.root_pattern("deno.json", "deno.jsonc")(fname)
+              and util.root_pattern("package.json", "jsconfig.json", "tsconfig.json")(fname)
+          end,
+          single_file_support = false,
+        })
+      end,
     })
   end,
 }
