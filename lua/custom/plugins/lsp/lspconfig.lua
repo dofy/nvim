@@ -4,7 +4,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim", opts = {} },
+    { "folke/lazydev.nvim", ft = "lua", opts = {} },
   },
   config = function()
     local keymap = vim.keymap -- for conciseness
@@ -66,5 +66,20 @@ return {
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
+
+    -- ts_ls only activates in projects with package.json (not Deno projects)
+    vim.lsp.config("ts_ls", {
+      root_dir = function(fname)
+        return vim.fs.root(fname, "package.json")
+      end,
+      single_file_support = false,
+    })
+
+    -- denols only activates in projects with deno.json / deno.jsonc
+    vim.lsp.config("denols", {
+      root_dir = function(fname)
+        return vim.fs.root(fname, { "deno.json", "deno.jsonc" })
+      end,
+    })
   end,
 }
