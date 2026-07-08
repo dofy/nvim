@@ -21,9 +21,6 @@ return {
       },
       "fang2hou/blink-copilot",
     },
-    build = function()
-      require("blink.cmp").build():wait(60000)
-    end,
 
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
@@ -64,7 +61,7 @@ return {
         },
       },
 
-      fuzzy = { implementation = "rust" },
+      fuzzy = { implementation = "lua" },
     },
   },
 }
