@@ -6,6 +6,10 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   branch = "main",
+  -- Pinned: `main` is a rolling dev branch with no releases, so :Lazy update
+  -- can pull breaking API changes. Bump this commit deliberately (and keep it
+  -- in sync with nvim-treesitter-textobjects), then re-test before committing.
+  commit = "4916d6592ede8c07973490d9322f187e07dfefac",
   lazy = false, -- main branch does not support lazy-loading
   build = ":TSUpdate",
   dependencies = {

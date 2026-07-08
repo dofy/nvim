@@ -5,6 +5,9 @@
 return {
   "nvim-treesitter/nvim-treesitter-textobjects",
   branch = "main",
+  -- Pinned: keep in sync with nvim-treesitter's pinned commit (this branch's
+  -- API depends on it). Bump both together and re-test before committing.
+  commit = "851e865342e5a4cb1ae23d31caf6e991e1c99f1e",
   dependencies = { "nvim-treesitter/nvim-treesitter" },
   config = function()
     require("nvim-treesitter-textobjects").setup({
